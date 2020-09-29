@@ -11,7 +11,12 @@ import Foundation
 extension Array {
 
     public subscript(index: UInt) -> Iterator.Element {
-        return self[Int(index)]
+        get {
+            return self[index.signed]
+        }
+        set(value) {
+            self[index.signed] = value
+        }
     }
 }
 
