@@ -18,7 +18,9 @@ public enum HTTPHeader: Equatable {
     case contentType(MimeType)
     case cookie(String)
     case userAgent(String)
-    
+
+    case custom(String, String)
+
     // MARK: - Funcs
     
     public var key: String {
@@ -33,6 +35,7 @@ public enum HTTPHeader: Equatable {
         case .contentType: name = "Content-Type"
         case .cookie: name = "Cookie"
         case .userAgent: name = "User-Agent"
+        case let .custom(aName, _): name = aName
         }
         
         return name
@@ -50,6 +53,7 @@ public enum HTTPHeader: Equatable {
         case let .contentType(mimeType): value = mimeType.description
         case let .cookie(cookie): value = cookie
         case let .userAgent(name): value = name
+        case let .custom(_, aValue): value = aValue
         }
         
         return value
