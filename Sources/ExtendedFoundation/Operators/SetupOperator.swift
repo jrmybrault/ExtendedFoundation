@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SetupOperator.swift
 //  
 //
 //  Created by Jérémy Brault on 20/10/2020.
